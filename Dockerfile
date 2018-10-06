@@ -16,7 +16,7 @@ RUN go get ./... && CGO_ENABLED=0 go build \
 FROM scratch
 
 ENV PORT 8080
-ENV DIAG_PORT 3000
+ENV DIAG_PORT 8585
 
 COPY --from=0 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
