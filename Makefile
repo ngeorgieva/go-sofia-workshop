@@ -28,6 +28,6 @@ push: build
 	docker push $(CONTAINER_IMAGE):$(RELEASE)
 
 deploy: push
-	helm upgrade ${CONTAINER_NAME} -f charts/${VALUES}.yaml charts \
+	helm upgrade --force ${CONTAINER_NAME} -f charts/${VALUES}.yaml charts \
 		--kube-context ${KUBE_CONTEXT} --namespace ${NAMESPACE} --version=${RELEASE} -i --wait \
 		--set image.registry=${REGISTRY} --set image.name=${CONTAINER_NAME} --set image.tag=${RELEASE}
