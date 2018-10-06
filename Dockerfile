@@ -27,4 +27,5 @@ COPY --from=0 /go/src/github.com/ngeorgieva/go-sofia-workshop/bin/go-sofia-works
 EXPOSE $PORT
 EXPOSE $DIAG_PORT
 
+
 CMD ["/go-sofia-workshop"]
